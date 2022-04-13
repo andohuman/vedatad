@@ -23,6 +23,8 @@ data = dict(
                 num_frames=num_frames,
                 iof_th=0.75),
             dict(typename='LoadFrames', to_float32=True),
+            # we still need to crop, just not randomly
+            dict(typename='SpatialCenterCrop', crop_size=img_shape),
             # dict(typename='SpatialRandomCrop', crop_size=img_shape),
             # dict(
             #     typename='PhotoMetricDistortion',
